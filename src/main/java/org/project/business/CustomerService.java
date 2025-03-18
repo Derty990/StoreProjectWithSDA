@@ -43,7 +43,7 @@ public class CustomerService {
         Customer existingCustomer = find(email);
 
         opinionService.removeAll(email);
-        //TODO
+
         purchaseService.removeAll(email);
 
         if(isOlderThan40(existingCustomer)){

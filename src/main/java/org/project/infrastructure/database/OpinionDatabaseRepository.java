@@ -1,11 +1,11 @@
 package org.project.infrastructure.database;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.project.business.OpinionRepository;
 import org.project.domain.Opinion;
 import org.project.infrastructure.configuration.DatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
@@ -24,17 +24,15 @@ public class OpinionDatabaseRepository implements OpinionRepository {
             = "DELETE FROM OPINION WHERE CUSTOMER_ID IN (SELECT ID FROM CUSTOMER WHERE EMAIL = :email)";
     public static final String SELECT_ALL_WHERE_CUSTOMER_EMAIL
             = """
-                SELECT * FROM OPINION AS OPN 
-                    INNER JOIN CUSTOMER AS CUS ON CUS.ID = OPN.CUSTOMER_ID 
-                    WHERE CUS.EMAIL = :email 
+                SELECT * FROM OPINION AS OPN
+                    INNER JOIN CUSTOMER AS CUS ON CUS.ID = OPN.CUSTOMER_ID
+                    WHERE CUS.EMAIL = :email
                     ORDER BY DATE_TIME
             """;
 
     private final SimpleDriverDataSource simpleDriverDataSource;
 
     private final DatabaseMapper databaseMapper;
-
-
 
     @Override
     public Opinion create(Opinion opinion) {

@@ -61,7 +61,7 @@ public class StoreFixtures {
                 .customer(customer)
                 .product(product1)
                 .quantity(2)
-                .dateTime(OffsetDateTime.of(2020, 1, 1, 10, 9, 10, 1, ZoneOffset.ofHours(4)))
+                .dateTime(OffsetDateTime.of(2020, 1, 1, 10, 9, 10, 0, ZoneOffset.ofHours(4)))
                 .build();
 
     }
@@ -73,7 +73,7 @@ public class StoreFixtures {
                 .product(product1)
                 .stars((byte) 4)
                 .comment("My comment")
-                .dateTime(OffsetDateTime.of(2020, 1, 1, 12, 9, 10, 1, ZoneOffset.ofHours(4)))
+                .dateTime(OffsetDateTime.of(2020, 1, 1, 12, 9, 10, 0, ZoneOffset.ofHours(4)))
                 .build();
 
     }
