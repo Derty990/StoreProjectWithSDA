@@ -5,6 +5,8 @@ import org.project.domain.Opinion;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class OpinionService {
@@ -21,6 +23,17 @@ public class OpinionService {
 
         return opinionRepository.create(opinion);
 
+    }
+
+    @Transactional
+    public void removeAll(String email) {
+
+        opinionRepository.remove(email);
+
+    }
+
+    public List<Opinion> findAll(String email) {
+        return opinionRepository.findAll(email);
     }
 }
 

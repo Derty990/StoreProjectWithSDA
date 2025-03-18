@@ -11,4 +11,5 @@ public interface CustomerRepository {
 
     void removeAll();
 
+    void remove(String email);
 }
