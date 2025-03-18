@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.project.business.CustomerRepository;
 import org.project.domain.Customer;
 import org.project.infrastructure.configuration.DatabaseConfiguration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 @AllArgsConstructor
 public class CustomerDatabaseRepository implements CustomerRepository {
+
+    public static final String DELETE_ALL = "DELETE FROM CUSTOMER WHERE 1=1";
 
     private final SimpleDriverDataSource simpleDriverDataSource;
 
@@ -29,4 +32,15 @@ public class CustomerDatabaseRepository implements CustomerRepository {
 
 
     }
+
+    @Override
+    public void removeAll() {
+        new JdbcTemplate(simpleDriverDataSource).update(DELETE_ALL);
+    }
+
+
+
+
+
+
 }

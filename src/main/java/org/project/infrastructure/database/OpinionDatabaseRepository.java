@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.project.business.OpinionRepository;
 import org.project.domain.Opinion;
 import org.project.infrastructure.configuration.DatabaseConfiguration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
@@ -15,6 +16,8 @@ import java.util.Map;
 @Repository
 @AllArgsConstructor
 public class OpinionDatabaseRepository implements OpinionRepository {
+
+    public static final String DELETE_ALL = "DELETE FROM OPINION WHERE 1=1";
 
     private final SimpleDriverDataSource simpleDriverDataSource;
 
@@ -34,4 +37,10 @@ public class OpinionDatabaseRepository implements OpinionRepository {
         Number opinionId = jdbcInsert.executeAndReturnKey(params);
         return opinion.withId((long) opinionId.intValue());
     }
+
+    @Override
+    public void removeAll() {
+        new JdbcTemplate(simpleDriverDataSource).update(DELETE_ALL);
+    }
+
 }

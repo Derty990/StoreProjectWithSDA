@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.project.business.PurchaseRepository;
 import org.project.domain.Purchase;
 import org.project.infrastructure.configuration.DatabaseConfiguration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,8 @@ import java.util.Map;
 @Repository
 @AllArgsConstructor
 public class PurchaseDatabaseRepository implements PurchaseRepository {
+
+    public static final String DELETE_ALL = "DELETE FROM PURCHASE WHERE 1=1";
 
     private final SimpleDriverDataSource simpleDriverDataSource;
 
@@ -31,4 +34,10 @@ public class PurchaseDatabaseRepository implements PurchaseRepository {
         Number purchaseId = jdbcInsert.executeAndReturnKey(params);
         return purchase.withId((long) purchaseId.intValue());
     }
+
+    @Override
+    public void removeAll() {
+        new JdbcTemplate(simpleDriverDataSource).update(DELETE_ALL);
+    }
+
 }
