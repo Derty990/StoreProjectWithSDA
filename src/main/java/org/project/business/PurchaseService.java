@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-//@Service
+@Service
 @AllArgsConstructor
 public class PurchaseService {
 
@@ -21,7 +21,7 @@ public class PurchaseService {
     }
 
     @Transactional
-    public void removeAll(){
+    public void removeAll() {
         purchaseRepository.removeAll();
 
     }
@@ -32,10 +32,15 @@ public class PurchaseService {
 
     }
 
+    public List<Purchase> findAll() {
+
+        return purchaseRepository.findAll();
+
+    }
+
     public List<Purchase> findAll(String email) {
 
         return purchaseRepository.findAll(email);
-
 
     }
 

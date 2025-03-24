@@ -1,4 +1,204 @@
-INSERT INTO CUSTOMER (ID, USER_NAME, EMAIL, NAME, SURNAME, DATE_OF_BIRTH, TELEPHONE_NUMBER) VALUES
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - OpinionServiceTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>OpinionServiceTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.project.integration.html">org.project.integration</a> &gt; OpinionServiceTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.407s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">t7</td>
+<td class="success">thatUnwantedOpinionsAreRemoved()</td>
+<td class="success">0.407s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>DEBUG - Using ContextCustomizerFactory implementations for test class [OpinionServiceTest]: [MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
+DEBUG - Using ContextCustomizers for test class [OpinionServiceTest]: []
+DEBUG - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: jakarta/servlet/ServletContext
+DEBUG - Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+DEBUG - Using TestExecutionListeners for test class [OpinionServiceTest]: [DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener]
+DEBUG - Before test class: class [OpinionServiceTest], class annotated with @DirtiesContext [false] with mode [null]
+DEBUG - Loading ApplicationContext for test class org.project.integration.OpinionServiceTest
+DEBUG - Activating profiles []
+DEBUG - Registering component classes: [org.project.infrastructure.configuration.ApplicationConfiguration]
+DEBUG - Refreshing org.springframework.context.support.GenericApplicationContext@9d157ff
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\business\CustomerService.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\business\OpinionService.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\business\ProducerService.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\business\ProductService.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\business\PurchaseService.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\business\RandomDataPreparationService.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\business\RandomDataService.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\business\ReloadDataService.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\infrastructure\configuration\DatabaseConfiguration.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\infrastructure\database\CustomerDatabaseRepository.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\infrastructure\database\DatabaseMapper.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\infrastructure\database\OpinionDatabaseRepository.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\infrastructure\database\ProducerDatabaseRepository.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\infrastructure\database\ProductDatabaseRepository.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\infrastructure\database\PurchaseDatabaseRepository.class]
+DEBUG - Identified candidate component class: file [F:\Zajavka\Warsztaty\Sekcja 16 Spring Data Access\projectSDA\build\classes\java\main\org\project\infrastructure\database\ReloadDataDatabaseRepository.class]
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+DEBUG - Creating shared instance of singleton bean 'applicationConfiguration'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+DEBUG - Creating shared instance of singleton bean 'transactionAttributeSource'
+DEBUG - Creating shared instance of singleton bean 'transactionInterceptor'
+DEBUG - Autowiring by type from bean name 'transactionInterceptor' via factory method to bean named 'transactionAttributeSource'
+DEBUG - Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionAttributeSource'
+DEBUG - Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionInterceptor'
+DEBUG - Creating shared instance of singleton bean 'customerService'
+DEBUG - Creating shared instance of singleton bean 'opinionService'
+DEBUG - Creating shared instance of singleton bean 'purchaseService'
+DEBUG - Creating shared instance of singleton bean 'purchaseDatabaseRepository'
+DEBUG - Creating shared instance of singleton bean 'simpleDriverDataSource'
+DEBUG - Creating shared instance of singleton bean 'databaseConfiguration'
+DEBUG - Creating shared instance of singleton bean 'databaseMapper'
+DEBUG - Autowiring by type from bean name 'purchaseDatabaseRepository' via constructor to bean named 'simpleDriverDataSource'
+DEBUG - Autowiring by type from bean name 'purchaseDatabaseRepository' via constructor to bean named 'databaseMapper'
+DEBUG - Autowiring by type from bean name 'purchaseService' via constructor to bean named 'purchaseDatabaseRepository'
+DEBUG - Creating shared instance of singleton bean 'opinionDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'opinionDatabaseRepository' via constructor to bean named 'simpleDriverDataSource'
+DEBUG - Autowiring by type from bean name 'opinionDatabaseRepository' via constructor to bean named 'databaseMapper'
+DEBUG - Autowiring by type from bean name 'opinionService' via constructor to bean named 'purchaseService'
+DEBUG - Autowiring by type from bean name 'opinionService' via constructor to bean named 'opinionDatabaseRepository'
+DEBUG - Creating shared instance of singleton bean 'customerDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'customerDatabaseRepository' via constructor to bean named 'simpleDriverDataSource'
+DEBUG - Autowiring by type from bean name 'customerDatabaseRepository' via constructor to bean named 'databaseMapper'
+DEBUG - Autowiring by type from bean name 'customerService' via constructor to bean named 'opinionService'
+DEBUG - Autowiring by type from bean name 'customerService' via constructor to bean named 'purchaseService'
+DEBUG - Autowiring by type from bean name 'customerService' via constructor to bean named 'customerDatabaseRepository'
+DEBUG - Creating shared instance of singleton bean 'producerService'
+DEBUG - Creating shared instance of singleton bean 'productService'
+DEBUG - Creating shared instance of singleton bean 'productDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'productDatabaseRepository' via constructor to bean named 'simpleDriverDataSource'
+DEBUG - Autowiring by type from bean name 'productDatabaseRepository' via constructor to bean named 'databaseMapper'
+DEBUG - Autowiring by type from bean name 'productService' via constructor to bean named 'productDatabaseRepository'
+DEBUG - Creating shared instance of singleton bean 'producerDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'producerDatabaseRepository' via constructor to bean named 'simpleDriverDataSource'
+DEBUG - Autowiring by type from bean name 'producerDatabaseRepository' via constructor to bean named 'databaseMapper'
+DEBUG - Autowiring by type from bean name 'producerService' via constructor to bean named 'productService'
+DEBUG - Autowiring by type from bean name 'producerService' via constructor to bean named 'producerDatabaseRepository'
+DEBUG - Creating shared instance of singleton bean 'randomDataPreparationService'
+DEBUG - Creating shared instance of singleton bean 'randomDataService'
+DEBUG - Autowiring by type from bean name 'randomDataService' via constructor to bean named 'randomDataPreparationService'
+DEBUG - Autowiring by type from bean name 'randomDataService' via constructor to bean named 'customerDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'randomDataService' via constructor to bean named 'opinionDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'randomDataService' via constructor to bean named 'producerDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'randomDataService' via constructor to bean named 'productDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'randomDataService' via constructor to bean named 'purchaseDatabaseRepository'
+DEBUG - Creating shared instance of singleton bean 'reloadDataService'
+DEBUG - Creating shared instance of singleton bean 'reloadDataDatabaseRepository'
+DEBUG - Autowiring by type from bean name 'reloadDataDatabaseRepository' via constructor to bean named 'simpleDriverDataSource'
+DEBUG - Autowiring by type from bean name 'reloadDataService' via constructor to bean named 'customerService'
+DEBUG - Autowiring by type from bean name 'reloadDataService' via constructor to bean named 'producerService'
+DEBUG - Autowiring by type from bean name 'reloadDataService' via constructor to bean named 'randomDataService'
+DEBUG - Autowiring by type from bean name 'reloadDataService' via constructor to bean named 'reloadDataDatabaseRepository'
+DEBUG - Creating shared instance of singleton bean 'txManager'
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+DEBUG - Performing dependency injection for test class org.project.integration.OpinionServiceTest
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+DEBUG - Before test method: class [OpinionServiceTest], method [thatUnwantedOpinionsAreRemoved], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+DEBUG - Creating new transaction with name [org.project.business.ReloadDataService.reloadData]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+DEBUG - Creating new JDBC Driver Connection to [jdbc:postgresql://localhost:5432/store]
+DEBUG - Acquired Connection [org.postgresql.jdbc.PgConnection@4c48fe92] for JDBC transaction
+DEBUG - Switching JDBC Connection [org.postgresql.jdbc.PgConnection@4c48fe92] to manual commit
+DEBUG - Participating in existing transaction
+DEBUG - Participating in existing transaction
+DEBUG - Executing SQL update [DELETE FROM OPINION WHERE 1=1]
+DEBUG - Participating in existing transaction
+DEBUG - Executing SQL update [DELETE FROM PURCHASE WHERE 1=1]
+DEBUG - Executing SQL update [DELETE FROM CUSTOMER WHERE 1=1]
+DEBUG - Participating in existing transaction
+DEBUG - Participating in existing transaction
+DEBUG - Executing SQL update [DELETE FROM PRODUCT WHERE 1=1]
+DEBUG - Executing SQL update [DELETE FROM PRODUCER WHERE 1=1]
+DEBUG - Executing SQL update [INSERT INTO CUSTOMER (ID, USER_NAME, EMAIL, NAME, SURNAME, DATE_OF_BIRTH, TELEPHONE_NUMBER) VALUES
 (1, 'dmcgettrick0', 'dmcgettrick0@infoseek.cjp', 'Dorris', 'McGettrick', '1986-11-18', '90-261-3997'),
 (2, 'gseaking1', 'gseaking1@wikipedia.org', 'Gretchen', 'Seaking', '1983-2-25', null),
 (3, 'lthurnham2', 'lthurnham2@php.net', 'Libbey', 'Thurnham', '1986-11-15', null),
@@ -100,7 +300,9 @@ INSERT INTO CUSTOMER (ID, USER_NAME, EMAIL, NAME, SURNAME, DATE_OF_BIRTH, TELEPH
 (99, 'akmiec2q', 'akmiec2q@taobao.com', 'Ami', 'Kmiec', '2002-1-21', '10-816-6087'),
 (100, 'tgoodsal2r', 'tgoodsal2r@edublogs.org', 'Talbert', 'Goodsal', '1942-4-14', null);
 
-INSERT INTO PRODUCER (ID, PRODUCER_NAME, ADDRESS) VALUES
+]
+DEBUG - Inserted bootstrap data rows: [100]
+DEBUG - Executing SQL update [INSERT INTO PRODUCER (ID, PRODUCER_NAME, ADDRESS) VALUES
 (1, 'Heidenreich-Mayer', '477 Hoffman Crossing'),
 (2, 'Hayes Group', '8 Novick Street'),
 (3, 'Goyette, Dietrich and Cassin', '995 Cambridge Street'),
@@ -122,7 +324,9 @@ INSERT INTO PRODUCER (ID, PRODUCER_NAME, ADDRESS) VALUES
 (19, 'Gerlach and Sons', '24 Almo Point'),
 (20, 'Mertz Group', '2 Mandrake Point');
 
-INSERT INTO PRODUCT (ID, PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, ADULTS_ONLY, DESCRIPTION, PRODUCER_ID) VALUES
+]
+DEBUG - Inserted bootstrap data rows: [20]
+DEBUG - Executing SQL update [INSERT INTO PRODUCT (ID, PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, ADULTS_ONLY, DESCRIPTION, PRODUCER_ID) VALUES
 (1, '58394-014', 'Chivas Regal - 12 Year Old', 16.29, false, 'Befv mcmo tgzs rpgt zcpb', 1),
 (2, '55319-866', 'Fennel', 38.49, false, 'Lbyq bfwo pqux mppe tjpq', 2),
 (3, '0008-0407', 'Muffin Batt - Ban Dream Zero', 14.85, false, 'Sujh xcjs dhjx djeb vbdp', 3),
@@ -174,7 +378,9 @@ INSERT INTO PRODUCT (ID, PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, ADULTS_ONLY,
 (49, '42002-516', 'Shrimp - Black Tiger 26/30', 43.43, true, 'Lbkf rrwq laxm qjbw xdyp', 3),
 (50, '60919-1073', 'Pork - Chop, Frenched', 34.16, false, 'Crmc grnz zvqg qjnj eosg', 15);
 
-INSERT INTO PURCHASE (ID, CUSTOMER_ID, PRODUCT_ID, QUANTITY, DATE_TIME) VALUES
+]
+DEBUG - Inserted bootstrap data rows: [50]
+DEBUG - Executing SQL update [INSERT INTO PURCHASE (ID, CUSTOMER_ID, PRODUCT_ID, QUANTITY, DATE_TIME) VALUES
 (1, 85, 24, 4, '2018-06-14 09:46:57 -03:00'),
 (2, 91, 23, 7, '2018-06-28 22:39:39 +05:00'),
 (3, 27, 40, 4, '2017-12-08 21:08:56 -01:00'),
@@ -476,7 +682,9 @@ INSERT INTO PURCHASE (ID, CUSTOMER_ID, PRODUCT_ID, QUANTITY, DATE_TIME) VALUES
 (299, 25, 11, 2, '2015-06-15 00:48:46 -05:00'),
 (300, 73, 26, 18, '2019-05-17 17:06:57 -05:00');
 
-INSERT INTO OPINION (ID, CUSTOMER_ID, PRODUCT_ID, STARS, COMMENT, DATE_TIME) VALUES
+]
+DEBUG - Inserted bootstrap data rows: [300]
+DEBUG - Executing SQL update [INSERT INTO OPINION (ID, CUSTOMER_ID, PRODUCT_ID, STARS, COMMENT, DATE_TIME) VALUES
 (1, 69, 39, 3, 'Giaa tuh zszyqsn rhqh wmidxby ezwxa', '2016-07-17 21:20:32 -05:00'),
 (2, 94, 2, 3, 'Ncdk gaz dxlsblh zuxs shpaofs wssbs', '2018-02-07 08:56:46 +07:00'),
 (3, 80, 4, 1, 'Xrku cvm nhukkdv rrxd sfmhwin cfppg', '2015-01-11 04:26:17 +07:00'),
@@ -617,3 +825,48 @@ INSERT INTO OPINION (ID, CUSTOMER_ID, PRODUCT_ID, STARS, COMMENT, DATE_TIME) VAL
 (138, 91, 29, 3, 'Cinv ubc dcackyf njnp omsbdpa zvjmu', '2020-09-04 19:08:09 -03:00'),
 (139, 56, 20, 4, 'Torf roe bfntcil tgwz txgfdbi ktksi', '2017-09-23 19:06:56 -02:00'),
 (140, 57, 12, 1, 'Asjz ojb ncepuzm jhid qrzntqf vfnsb', '2018-12-15 06:14:59 +05:00');
+]
+DEBUG - Inserted bootstrap data rows: [140]
+DEBUG - Initiating transaction commit
+DEBUG - Committing JDBC transaction on Connection [org.postgresql.jdbc.PgConnection@4c48fe92]
+DEBUG - Releasing JDBC Connection [org.postgresql.jdbc.PgConnection@4c48fe92] after transaction
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+DEBUG - Executing SQL query [SELECT * FROM OPINION]
+DEBUG - Fetching JDBC Connection from DataSource
+DEBUG - Creating new JDBC Driver Connection to [jdbc:postgresql://localhost:5432/store]
+DEBUG - Executing SQL query [SELECT * FROM OPINION WHERE STARS &lt; 4]
+DEBUG - Fetching JDBC Connection from DataSource
+DEBUG - Creating new JDBC Driver Connection to [jdbc:postgresql://localhost:5432/store]
+DEBUG - Creating new transaction with name [org.project.business.OpinionService.removeUnwantedOpinions]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+DEBUG - Creating new JDBC Driver Connection to [jdbc:postgresql://localhost:5432/store]
+DEBUG - Acquired Connection [org.postgresql.jdbc.PgConnection@184fb68d] for JDBC transaction
+DEBUG - Switching JDBC Connection [org.postgresql.jdbc.PgConnection@184fb68d] to manual commit
+DEBUG - Executing SQL update [DELETE FROM OPINION WHERE STARS &lt; 4]
+DEBUG - Removed: [83] opinions
+DEBUG - Initiating transaction commit
+DEBUG - Committing JDBC transaction on Connection [org.postgresql.jdbc.PgConnection@184fb68d]
+DEBUG - Releasing JDBC Connection [org.postgresql.jdbc.PgConnection@184fb68d] after transaction
+DEBUG - Executing SQL query [SELECT * FROM OPINION]
+DEBUG - Fetching JDBC Connection from DataSource
+DEBUG - Creating new JDBC Driver Connection to [jdbc:postgresql://localhost:5432/store]
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+DEBUG - After test method: class [OpinionServiceTest], method [thatUnwantedOpinionsAreRemoved], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+DEBUG - Spring test ApplicationContext cache statistics: [DefaultContextCache@4c2869a9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+DEBUG - After test class: class [OpinionServiceTest], class annotated with @DirtiesContext [false] with mode [null]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.10</a> at 24 mar 2025, 17:33:47</p>
+</div>
+</div>
+</body>
+</html>

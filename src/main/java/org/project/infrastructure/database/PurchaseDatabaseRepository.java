@@ -19,6 +19,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class PurchaseDatabaseRepository implements PurchaseRepository {
 
+    private static final String SELECT_ALL = "SELECT * FROM PURCHASE";
     private static final String DELETE_ALL = "DELETE FROM PURCHASE WHERE 1=1";
     private static final String DELETE_ALL_WHERE_CUSTOMER_EMAIL
             = "DELETE FROM PURCHASE WHERE CUSTOMER_ID IN (SELECT ID FROM CUSTOMER WHERE EMAIL = :email)";
@@ -39,7 +40,6 @@ public class PurchaseDatabaseRepository implements PurchaseRepository {
                     AND PROD.PRODUCT_CODE = :productCode
                     ORDER BY DATE_TIME
             """;
-
 
     private final SimpleDriverDataSource simpleDriverDataSource;
 
@@ -74,6 +74,12 @@ public class PurchaseDatabaseRepository implements PurchaseRepository {
         NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
         return jdbcTemplate.query(SELECT_ALL_WHERE_CUSTOMER_EMAIL, Map.of("email", email), databaseMapper::mapPurchase);
 
+    }
+
+    @Override
+    public List<Purchase> findAll() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(simpleDriverDataSource);
+        return jdbcTemplate.query(SELECT_ALL, databaseMapper::mapPurchase);
     }
 
     @Override

@@ -1,4 +1,10 @@
 package org.project.business;
 
-public class ReloadDataRepository {
+import org.springframework.stereotype.Repository;
+
+
+public interface ReloadDataRepository {
+
+    void run(String sql);
+
 }

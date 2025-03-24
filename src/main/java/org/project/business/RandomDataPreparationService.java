@@ -14,14 +14,14 @@ import java.util.stream.IntStream;
 public class RandomDataPreparationService {
 
     Customer createCustomer() {
-        String name = randomString(65,90, 1) + randomString(97,122,10) + randomString(48,57,2);
+        String name = randomString(65, 90, 1) + randomString(97, 122, 10) + randomString(48, 57, 2);
         return Customer.builder()
-                .userName(name+"user")
+                .userName(name + "user")
                 .email(name + "@gmail.com")
                 .name(name)
                 .surname("surname")
                 .dateOfBirth(LocalDate.of(1991, 10, 2))
-                .telephoneNumber("+" + randomString(48,57, 11))
+                .telephoneNumber("+" + randomString(48, 57, 11))
                 .build();
     }
 
@@ -29,7 +29,7 @@ public class RandomDataPreparationService {
         return Opinion.builder()
                 .customer(customer)
                 .product(product)
-                .stars((byte)4)
+                .stars((byte) 4)
                 .comment("My comment")
                 .dateTime(OffsetDateTime.of(2020, 1, 1, 12, 9, 10, 1, ZoneOffset.ofHours(4)))
                 .build();
@@ -37,14 +37,14 @@ public class RandomDataPreparationService {
 
     Producer createProducer() {
         return Producer.builder()
-                .producerName(randomString(65,90,1) + randomString(97,122,10))
+                .producerName(randomString(65, 90, 1) + randomString(97, 122, 10))
                 .address("Some address")
                 .build();
     }
 
     Product createProduct(Producer producer) {
         return Product.builder()
-                .productCode(randomString(65,90,3)+randomString(97,122,4)+randomString(48,57,2))
+                .productCode(randomString(65, 90, 3) + randomString(97, 122, 4) + randomString(48, 57, 2))
                 .productName("productName")
                 .productPrice(BigDecimal.valueOf(162.16))
                 .adultsOnly(false)
@@ -57,22 +57,22 @@ public class RandomDataPreparationService {
         return Purchase.builder()
                 .customer(customer)
                 .product(product)
-                .quantity(randomInt(1,5))
+                .quantity(randomInt(1, 5))
                 .dateTime(OffsetDateTime.of(2020, 1, 1, 10, 9, 10, 1, ZoneOffset.ofHours(4)))
                 .build();
     }
 
-    private String randomString(int min, int max, int length){
+    private String randomString(int min, int max, int length) {
 
         return IntStream.range(0, length)
                 .boxed()
-                .reduce("", (previous, next) -> previous + (char) randomInt(min,max), String::concat);
+                .reduce("", (previous, next) -> previous + (char) randomInt(min, max), String::concat);
 
     }
 
 
-    private int randomInt(int min, int max){
-        return new Random().nextInt(max-min)+min;
+    private int randomInt(int min, int max) {
+        return new Random().nextInt(max - min) + min;
     }
 
 

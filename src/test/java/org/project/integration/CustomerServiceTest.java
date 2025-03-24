@@ -18,7 +18,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringJUnitConfig(classes = ApplicationConfiguration.class)
-@AllArgsConstructor(onConstructor_ = @__(@Autowired))
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class CustomerServiceTest {
 
 

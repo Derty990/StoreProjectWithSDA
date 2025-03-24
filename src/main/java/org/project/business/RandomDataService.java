@@ -19,7 +19,7 @@ public class RandomDataService {
     private final PurchaseRepository purchaseRepository;
 
     @Transactional
-    public void create(){
+    public void create() {
         Customer customer = customerRepository.create(randomDataPreparationService.createCustomer());
         Producer producer = producerRepository.create(randomDataPreparationService.createProducer());
         Product product = productRepository.create(randomDataPreparationService.createProduct(producer));

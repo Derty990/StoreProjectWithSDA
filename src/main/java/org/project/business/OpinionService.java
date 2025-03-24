@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class  OpinionService {
+public class OpinionService {
 
     private final PurchaseService purchaseService;
 
@@ -25,10 +25,10 @@ public class  OpinionService {
         List<Purchase> purchases = purchaseService.findAll(email, productCode);
         log.debug("Customer: [{}] made: [{}] purchases for product: [{}]", email, purchases.size(), productCode);
 
-        if(purchases.isEmpty()){
+        if (purchases.isEmpty()) {
             throw new RuntimeException(
                     "Customer: [%s] wants to give opinion for product: [%s], but there is no purchase"
-                    .formatted(email, productCode)
+                            .formatted(email, productCode)
             );
         }
 
@@ -49,8 +49,26 @@ public class  OpinionService {
 
     }
 
+    public List<Opinion> findAll() {
+
+        return opinionRepository.findAll();
+
+    }
+
     public List<Opinion> findAll(String email) {
         return opinionRepository.findAll(email);
+    }
+
+    public List<Opinion> findUnwantedOpinions() {
+
+        return opinionRepository.findUnwantedOpinions();
+
+    }
+
+    @Transactional
+    public void removeUnwantedOpinions() {
+
+        opinionRepository.removeUnwantedOpinions();
     }
 }
 

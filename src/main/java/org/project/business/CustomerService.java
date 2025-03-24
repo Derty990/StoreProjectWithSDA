@@ -6,27 +6,33 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
-import java.util.Optional;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class CustomerService {
 
-    private OpinionService opinionService;
-    private PurchaseService purchaseService;
-    private CustomerRepository customerRepository;
+    private final OpinionService opinionService;
+    private final PurchaseService purchaseService;
+    private final CustomerRepository customerRepository;
 
     @Transactional
-    public Customer create(Customer customer){
+    public Customer create(Customer customer) {
         return customerRepository.create(customer);
     }
 
     @Transactional
-    public void removeAll(){
+    public void removeAll() {
 
         opinionService.removeAll();
         purchaseService.removeAll();
         customerRepository.removeAll();
+
+    }
+
+    public List<Customer> findAll() {
+
+        return customerRepository.findAll();
 
     }
 
@@ -46,7 +52,7 @@ public class CustomerService {
 
         purchaseService.removeAll(email);
 
-        if(isOlderThan40(existingCustomer)){
+        if (isOlderThan40(existingCustomer)) {
             throw new RuntimeException(
                     "Could not remove customer because he/she is older than 40, email: [%s]".formatted(email));
         }

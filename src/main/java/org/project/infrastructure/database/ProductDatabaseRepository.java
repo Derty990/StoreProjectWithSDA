@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -17,6 +18,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class ProductDatabaseRepository implements ProductRepository {
 
+    private static final String SELECT_ALL = "SELECT * FROM PRODUCT";
     public static final String DELETE_ALL = "DELETE FROM PRODUCT WHERE 1=1";
 
     private final SimpleDriverDataSource simpleDriverDataSource;
@@ -33,6 +35,12 @@ public class ProductDatabaseRepository implements ProductRepository {
 
         Number productId = jdbcInsert.executeAndReturnKey(params);
         return product.withId((long) productId.intValue());
+    }
+
+    @Override
+    public List<Product> findAll() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(simpleDriverDataSource);
+        return jdbcTemplate.query(SELECT_ALL, databaseMapper::mapProduct);
     }
 
     @Override
