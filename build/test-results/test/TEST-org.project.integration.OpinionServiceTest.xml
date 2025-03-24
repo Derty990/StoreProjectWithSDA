@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.project.integration.OpinionServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-24T16:33:46" hostname="DESKTOP-BRVIFG0" time="0.407">
+<testsuite name="org.project.integration.OpinionServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-24T16:35:38" hostname="DESKTOP-BRVIFG0" time="0.37">
   <properties/>
-  <testcase name="t7" classname="org.project.integration.OpinionServiceTest" time="0.407"/>
+  <testcase name="t7" classname="org.project.integration.OpinionServiceTest" time="0.37"/>
   <system-out><![CDATA[DEBUG - Using ContextCustomizerFactory implementations for test class [OpinionServiceTest]: [MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
 DEBUG - Using ContextCustomizers for test class [OpinionServiceTest]: []
 DEBUG - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: jakarta/servlet/ServletContext

@@ -42,7 +42,7 @@ public class CustomerServiceTest {
     }
 
     @Test
-    @DisplayName("Task 4 part 1")
+    @DisplayName("thatCustomerIsRemovedCorrectly")
     void thatCustomerIsRemovedCorrectly() {
         //given
 
@@ -71,7 +71,7 @@ public class CustomerServiceTest {
     }
 
     @Test
-    @DisplayName("Task 4 part 2")
+    @DisplayName("thatPurchaseAndOpinionIsNotRemovedWhenCustomerRemovingFails")
     void thatPurchaseAndOpinionIsNotRemovedWhenCustomerRemovingFails() {
         //given
         final Customer customer = customerService.create(StoreFixtures.someCustomer().withDateOfBirth(LocalDate.of(1950, 10, 4)));

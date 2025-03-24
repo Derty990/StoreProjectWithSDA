@@ -31,7 +31,7 @@ public class OpinionServiceTest {
     }
 
     @Test
-    @DisplayName("t7")
+    @DisplayName("thatUnwantedOpinionsAreRemoved")
     void thatUnwantedOpinionsAreRemoved(){
         //given
         assertEquals(140, opinionService.findAll().size());
