@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.project.business.OpinionServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-03-24T11:58:51" hostname="DESKTOP-BRVIFG0" time="0.843">
+  <properties/>
+  <testcase name="task 5 p2" classname="org.project.business.OpinionServiceTest" time="0.828"/>
+  <testcase name="task 5 p1" classname="org.project.business.OpinionServiceTest" time="0.008"/>
+  <system-out><![CDATA[DEBUG - Customer: [kluczb.bart@gmail.com] made: [0] purchases for product: [productCode1]
+DEBUG - Customer: [kluczb.bart@gmail.com] made: [1] purchases for product: [productCode1]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

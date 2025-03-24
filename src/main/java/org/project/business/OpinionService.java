@@ -1,27 +1,44 @@
 package org.project.business;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.project.domain.Opinion;
+import org.project.domain.Purchase;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @AllArgsConstructor
-public class OpinionService {
+public class  OpinionService {
+
+    private final PurchaseService purchaseService;
 
     private final OpinionRepository opinionRepository;
 
-    public void removeAll() {
-        opinionRepository.removeAll();
+    @Transactional
+    public Opinion create(Opinion opinion) {
+        String email = opinion.getCustomer().getEmail();
+        String productCode = opinion.getProduct().getProductCode();
+        List<Purchase> purchases = purchaseService.findAll(email, productCode);
+        log.debug("Customer: [{}] made: [{}] purchases for product: [{}]", email, purchases.size(), productCode);
+
+        if(purchases.isEmpty()){
+            throw new RuntimeException(
+                    "Customer: [%s] wants to give opinion for product: [%s], but there is no purchase"
+                    .formatted(email, productCode)
+            );
+        }
+
+        return opinionRepository.create(opinion);
 
     }
 
     @Transactional
-    public Opinion create(Opinion opinion) {
-
-        return opinionRepository.create(opinion);
+    public void removeAll() {
+        opinionRepository.removeAll();
 
     }
 

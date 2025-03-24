@@ -13,15 +13,15 @@ public class ProducerService {
     private final ProducerRepository producerRepository;
 
     @Transactional
+    public Producer create(Producer producer) {
+        return producerRepository.create(producer);
+    }
+
+    @Transactional
     public void removeAll(){
         productService.removeAll();
         producerRepository.removeAll();
 
-    }
-
-    @Transactional
-    public Producer create(Producer producer) {
-        return producerRepository.create(producer);
     }
 }
 

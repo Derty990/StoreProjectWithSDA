@@ -7,22 +7,22 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
+//@Service
 @AllArgsConstructor
 public class PurchaseService {
 
     private final PurchaseRepository purchaseRepository;
 
     @Transactional
-    public void removeAll(){
-        purchaseRepository.removeAll();
+    public Purchase create(Purchase purchase) {
+
+        return purchaseRepository.create(purchase);
 
     }
 
     @Transactional
-    public Purchase create(Purchase purchase) {
-
-        return purchaseRepository.create(purchase);
+    public void removeAll(){
+        purchaseRepository.removeAll();
 
     }
 
@@ -36,6 +36,12 @@ public class PurchaseService {
 
         return purchaseRepository.findAll(email);
 
+
+    }
+
+    public List<Purchase> findAll(String email, String productCode) {
+
+        return purchaseRepository.findAll(email, productCode);
 
     }
 }

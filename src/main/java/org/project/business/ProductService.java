@@ -12,15 +12,15 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     @Transactional
-    public void removeAll(){
-        productRepository.removeAll();
+    public Product create(Product product) {
+
+        return productRepository.create(product);
 
     }
 
     @Transactional
-    public Product create(Product product) {
-
-        return productRepository.create(product);
+    public void removeAll(){
+        productRepository.removeAll();
 
     }
 }
