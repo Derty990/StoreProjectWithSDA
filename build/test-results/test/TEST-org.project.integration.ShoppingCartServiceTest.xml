@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.project.integration.ShoppingCartServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-26T20:40:16" hostname="DESKTOP-BRVIFG0" time="0.59">
+  <properties/>
+  <testcase name="thatProductCanBeBoughtByCustomer" classname="org.project.integration.ShoppingCartServiceTest" time="0.59"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

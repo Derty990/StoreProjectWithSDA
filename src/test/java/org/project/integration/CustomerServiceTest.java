@@ -128,15 +128,11 @@ public class CustomerServiceTest {
         reloadDataService.reloadData();
         assertEquals(100, customerService.findAll().size());
 
-
         //when
         customerService.removeUnwantedCustomers();
 
-
         //then
         assertEquals(68, customerService.findAll().size());
-
-
 
     }
 

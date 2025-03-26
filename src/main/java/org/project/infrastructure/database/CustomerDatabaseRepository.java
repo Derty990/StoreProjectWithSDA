@@ -61,8 +61,6 @@ public class CustomerDatabaseRepository implements CustomerRepository {
             return Optional.empty();
         }
 
-
-
     }
 
     @Override

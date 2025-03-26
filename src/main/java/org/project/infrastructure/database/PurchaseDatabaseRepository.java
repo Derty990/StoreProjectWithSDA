@@ -35,7 +35,7 @@ public class PurchaseDatabaseRepository implements PurchaseRepository {
             = """
              SELECT * FROM PURCHASE AS PUR 
                     INNER JOIN CUSTOMER AS CUS ON CUS.ID = PUR.CUSTOMER_ID 
-                    INNER JOIN PRODUCT AS PROD = PROD.ID = PUR.PRODUCT_ID
+                    INNER JOIN PRODUCT AS PROD ON PROD.ID = PUR.PRODUCT_ID
                     WHERE CUS.EMAIL = :email 
                     AND PROD.PRODUCT_CODE = :productCode
                     ORDER BY DATE_TIME

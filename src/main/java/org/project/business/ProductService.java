@@ -31,4 +31,11 @@ public class ProductService {
         productRepository.removeAll();
 
     }
+
+    public Product find(String productCode) {
+
+        return productRepository.find(productCode)
+                .orElseThrow(() -> new RuntimeException("Product with product code: [%s] is missing".formatted(productCode)));
+
+    }
 }
