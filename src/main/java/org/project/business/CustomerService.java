@@ -35,8 +35,8 @@ public class CustomerService {
         return customerRepository.findAll();
 
     }
-
     public Customer find(String email) {
+
 
         return customerRepository.find(email)
                 .orElseThrow(() -> new RuntimeException("Customer with email: [%s] is missing".formatted(email)));
@@ -49,7 +49,6 @@ public class CustomerService {
         Customer existingCustomer = find(email);
 
         opinionService.removeAll(email);
-
         purchaseService.removeAll(email);
 
         if (isOlderThan40(existingCustomer)) {
@@ -67,5 +66,13 @@ public class CustomerService {
 
     }
 
+    @Transactional
+    public void removeUnwantedCustomers() {
+        List<Customer> customers = customerRepository.findAll().stream()
+                .filter(customer -> !isOlderThan40(customer))
+                .filter(customer -> opinionService.customerGivesUnwantedOpinions(customer.getEmail()))
+                .toList();
 
+        customers.forEach(customer -> remove(customer.getEmail()));
+    }
 }

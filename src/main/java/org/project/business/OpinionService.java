@@ -70,5 +70,11 @@ public class OpinionService {
 
         opinionRepository.removeUnwantedOpinions();
     }
+
+    public boolean customerGivesUnwantedOpinions(String email) {
+
+        return opinionRepository.customerGivesUnwantedOpinions(email);
+
+    }
 }
 

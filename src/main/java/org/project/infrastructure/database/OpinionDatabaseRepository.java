@@ -32,6 +32,11 @@ public class OpinionDatabaseRepository implements OpinionRepository {
             """;
     private static final String SELECT_UNWANTED_OPINIONS = "SELECT * FROM OPINION WHERE STARS < 4";
     private static final String DELETE_UNWANTED_OPINIONS = "DELETE FROM OPINION WHERE STARS < 4";
+    private static final String SELECT_UNWANTED_OPINIONS_FOR_EMAIL = """
+                SELECT * FROM OPINION 
+                WHERE STARS < 4 
+                AND CUSTOMER_ID IN (SELECT ID FROM CUSTOMER WHERE EMAIL = :email)
+""";
 
     private final SimpleDriverDataSource simpleDriverDataSource;
 
@@ -89,6 +94,14 @@ public class OpinionDatabaseRepository implements OpinionRepository {
         int result = jdbcTemplate.update(DELETE_UNWANTED_OPINIONS);
         log.debug("Removed: [{}] opinions",result);
 
+    }
+
+
+    @Override
+    public boolean customerGivesUnwantedOpinions(String email) {
+        NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
+        return jdbcTemplate.query(SELECT_UNWANTED_OPINIONS_FOR_EMAIL, Map.of("email",email), databaseMapper::mapOpinion)
+                .size() > 0;
 
     }
 }

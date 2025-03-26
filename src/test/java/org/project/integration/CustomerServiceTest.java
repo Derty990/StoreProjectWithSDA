@@ -2,6 +2,7 @@ package org.project.integration;
 
 
 import lombok.AllArgsConstructor;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -116,6 +117,25 @@ public class CustomerServiceTest {
                 ),
                 opinionService.findAll(customer.getEmail())
         );
+
+
+    }
+
+    @Test
+    @DisplayName("thatCustomersGivingUnwantedOpinionAreRemoved")
+    void thatCustomersGivingUnwantedOpinionAreRemoved(){
+        //given
+        reloadDataService.reloadData();
+        assertEquals(100, customerService.findAll().size());
+
+
+        //when
+        customerService.removeUnwantedCustomers();
+
+
+        //then
+        assertEquals(68, customerService.findAll().size());
+
 
 
     }
