@@ -49,6 +49,15 @@ public class PurchaseService {
         return purchaseRepository.findAll(email, productCode);
 
     }
+
+    public List<Purchase> findAllByProductCode(String productCode) {
+        return purchaseRepository.findAllByProductCode(productCode);
+    }
+
+    public void removeAllByProductCode(String productCode) {
+        purchaseRepository.removeAllByProductCode(productCode);
+
+    }
 }
 
 

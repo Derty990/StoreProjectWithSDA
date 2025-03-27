@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.project.integration.ProductServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-27T05:13:39" hostname="DESKTOP-BRVIFG0" time="0.565">
+  <properties/>
+  <testcase name="thatProductIsWiped" classname="org.project.integration.ProductServiceTest" time="0.565"/>
+  <system-out><![CDATA[WARN  - Trying to find non-existing product: [68084-618]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

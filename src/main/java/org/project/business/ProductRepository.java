@@ -14,4 +14,5 @@ public interface ProductRepository {
 
     Optional<Product> find(String productCode);
 
+    void remove(String productCode);
 }

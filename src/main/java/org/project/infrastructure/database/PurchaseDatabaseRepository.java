@@ -3,6 +3,7 @@ package org.project.infrastructure.database;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.project.business.PurchaseRepository;
+import org.project.domain.Opinion;
 import org.project.domain.Purchase;
 import org.project.infrastructure.configuration.DatabaseConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -31,15 +32,29 @@ public class PurchaseDatabaseRepository implements PurchaseRepository {
                     ORDER BY DATE_TIME
             """;
 
-    public static final String SELECT_ALL_WHERE_CUSTOMER_EMAIL_AND_PRODUCT_CODE
+    private static final String SELECT_ALL_WHERE_CUSTOMER_EMAIL_AND_PRODUCT_CODE
             = """
-             SELECT * FROM PURCHASE AS PUR 
+             SELECT * FROM PURCHASE AS PUR ó
                     INNER JOIN CUSTOMER AS CUS ON CUS.ID = PUR.CUSTOMER_ID 
                     INNER JOIN PRODUCT AS PROD ON PROD.ID = PUR.PRODUCT_ID
                     WHERE CUS.EMAIL = :email 
                     AND PROD.PRODUCT_CODE = :productCode
                     ORDER BY DATE_TIME
             """;
+
+    private static final String SELECT_ALL_BY_PRODUCT_CODE = """
+        SELECT * FROM PURCHASE AS PUR 
+        INNER JOIN PRODUCT AS PRD ON PRD.ID = PUR.PRODUCT_ID
+        WHERE PRD.PRODUCT_CODE = :productCode
+        ORDER BY DATE_TIME
+
+""";
+
+    private static final String DELETE_ALL_BY_PRODUCT_CODE = """
+    DELETE FROM PURCHASE
+    WHERE PRODUCT_ID IN (SELECT ID FROM PRODUCT WHERE PRODUCT_CODE = :productCode)
+
+""";
 
     private final SimpleDriverDataSource simpleDriverDataSource;
 
@@ -95,4 +110,17 @@ public class PurchaseDatabaseRepository implements PurchaseRepository {
         );
     }
 
+    @Override
+    public List<Purchase> findAllByProductCode(String productCode) {
+        NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
+        return jdbcTemplate.query(SELECT_ALL_BY_PRODUCT_CODE, Map.of("productCode", productCode), databaseMapper::mapPurchase);
+
+    }
+
+
+    @Override
+    public void removeAllByProductCode(String productCode) {
+        NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
+        jdbcTemplate.update(DELETE_ALL_BY_PRODUCT_CODE, Map.of("productCode", productCode));
+    }
 }

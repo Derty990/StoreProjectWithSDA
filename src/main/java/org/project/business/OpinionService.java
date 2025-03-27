@@ -76,5 +76,16 @@ public class OpinionService {
         return opinionRepository.customerGivesUnwantedOpinions(email);
 
     }
+
+    public List<Opinion> findAllByProductCode(String productCode) {
+
+        return opinionRepository.findAllByProductCode(productCode);
+
+    }
+
+    public void removeAllByProductCode(String productCode) {
+
+        opinionRepository.removeAllByProductCode(productCode);
+    }
 }
 
